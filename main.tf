@@ -30,8 +30,8 @@ module "my_workerpool" {
 
   image   = "projects/spacelift-workers/global/images/spacelift-worker-us-1634112379-tmoys2fp"
   network = "default"
-  region  = "us-central5"
-  zone    = "us-central5-a"
+  region  = "us-central1"
+  zone    = "us-central1-a"
   size    = 2
   email   = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   

@@ -11,5 +11,5 @@ terraform {
 
 provider "google" {
   project = "curtisgcpproject"
-  region  = "us-east-5"
+  region  = "us-central1"
 }
