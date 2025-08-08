@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "cheap_bucket" {
-  name                        = "${var.project_id}-cheap-demo-${random_id.suffix.hex}"
+  name                        = "curtis-cheap-demo-${random_id.suffix.hex}"
   location                    = "US-CENTRAL1"   # free-tier eligible; keep Standard storage
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
