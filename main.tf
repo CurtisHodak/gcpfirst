@@ -34,7 +34,7 @@ module "my_workerpool" {
   region  = "us-central1"
   zone    = "us-central1-a"
   size    = 2
-  email   = "abc@xyz.iam.gserviceaccount.com"
+  email   = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   
   providers = {
     google = google
