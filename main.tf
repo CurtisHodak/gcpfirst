@@ -20,16 +20,6 @@
 #   byte_length = 3
 # }
 
-
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "~> 4.14.0"
-    }
-  }
-}
-
 module "my_workerpool" {
   source = "github.com/spacelift-io/terraform-google-spacelift-workerpool?ref=v1.2.0"
 
