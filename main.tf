@@ -47,6 +47,14 @@ resource "google_bigquery_dataset" "example" {
     role          = "roles/bigquery.dataViewer"
     user_by_email = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   }
+   access {
+    role           = "roles/bigquery.dataOwner"
+    group_by_email = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
+  }
+  access {
+    role          = "OWNER"
+    user_by_email = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
+  }
 }
 
 ## changes
