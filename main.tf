@@ -48,3 +48,5 @@ resource "google_bigquery_dataset" "example" {
     user_by_email = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   }
 }
+
+## changes
