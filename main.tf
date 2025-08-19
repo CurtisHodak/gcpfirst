@@ -20,22 +20,31 @@
 #   byte_length = 3
 # }
 
-module "my_workerpool" {
-  source = "github.com/spacelift-io/terraform-google-spacelift-workerpool?ref=v1.2.0"
+# module "my_workerpool" {
+#   source = "github.com/spacelift-io/terraform-google-spacelift-workerpool?ref=v1.2.0"
 
-  configuration = <<-EOT
-    export SPACELIFT_TOKEN="${var.worker_pool_config}"
-    export SPACELIFT_POOL_PRIVATE_KEY="${var.worker_pool_private_key}"
-  EOT
+#   configuration = <<-EOT
+#     export SPACELIFT_TOKEN="${var.worker_pool_config}"
+#     export SPACELIFT_POOL_PRIVATE_KEY="${var.worker_pool_private_key}"
+#   EOT
 
-  image   = "projects/spacelift-workers/global/images/spacelift-worker-us-1634112379-tmoys2fp"
-  network = "default"
-  region  = "us-central1"
-  zone    = "us-central1-a"
-  size    = 2
-  email   = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
+#   image   = "projects/spacelift-workers/global/images/spacelift-worker-us-1634112379-tmoys2fp"
+#   network = "default"
+#   region  = "us-central1"
+#   zone    = "us-central1-a"
+#   size    = 2
+#   email   = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   
-  providers = {
-    google = google
+#   providers = {
+#     google = google
+#   }
+# }
+
+resource "google_bigquery_dataset" "example" {
+  dataset_id = "policytest_dataset"
+  location   = "us-central1" # change this to test enforcement
+  access {
+    role          = "roles/bigquery.dataViewer"
+    user_by_email = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   }
 }
