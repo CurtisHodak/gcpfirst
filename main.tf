@@ -42,7 +42,7 @@
 
 resource "google_bigquery_dataset" "example" {
   dataset_id = "policytest_dataset"
-  location   = "us-central1" # change this to test enforcement
+  location   = "us-east1" # change this to test enforcement
   access {
     role          = "roles/bigquery.dataViewer"
     user_by_email = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
