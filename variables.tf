@@ -9,3 +9,9 @@ variable "worker_pool_private_key" {
   default     = ""
   description = "description"
 }
+
+variable "locations" {
+  type        = list(string)
+  default     = ["us-central1"]
+  description = "List of locations for the worker pool"
+}
