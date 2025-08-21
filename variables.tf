@@ -11,7 +11,7 @@ variable "worker_pool_private_key" {
 }
 
 variable "locations" {
-  type        = list(string)
-  default     = ["us-central1"]
+  type        = string
+  default     = "us-central1"
   description = "List of locations for the worker pool"
 }
