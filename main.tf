@@ -71,15 +71,15 @@ resource "google_bigquery_dataset" "example" {
   location   = "us-central1" # change this to test enforcement
   access {
     role          = "roles/bigquery.dataViewer"
-    user_by_email = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
+    service_account = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   }
    access {
     role           = "roles/bigquery.dataOwner"
-    group_by_email = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
+    service_account = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   }
   access {
     role          = "OWNER"
-    user_by_email = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
+    service_account = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   }
 }
 
