@@ -68,18 +68,21 @@ resource "google_compute_router_nat" "nat" {
 
 resource "google_bigquery_dataset" "example" {
   dataset_id = "policytest_dataset"
-  location   = "us-central1" # change this to test enforcement
+  location   = "us-central1"
+
   access {
-    role          = "roles/bigquery.dataViewer"
-    service_account = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
+    role       = "roles/bigquery.dataViewer"
+    iam_member = "serviceAccount:spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   }
-   access {
-    role           = "roles/bigquery.dataOwner"
-    service_account = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
-  }
+
   access {
-    role          = "OWNER"
-    service_account = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
+    role       = "roles/bigquery.dataOwner"
+    iam_member = "serviceAccount:spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
+  }
+
+  access {
+    role       = "OWNER"
+    iam_member = "serviceAccount:spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   }
 }
 
