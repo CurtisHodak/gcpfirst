@@ -32,7 +32,7 @@ module "my_workerpool" {
   network = "default"
   region  = "us-central1"
   zone    = "us-central1-a"
-  size    = 2
+  size    = 3
   email   = "spacelift-oidc-test@curtisgcpproject.iam.gserviceaccount.com"
   
   providers = {
